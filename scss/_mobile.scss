@@ -1,0 +1,98 @@
+@import "config";
+// Widesreens
+@include mediaXl{
+  .projects{
+    grid-template-columns: repeat(4,1fr);
+  }
+};
+
+// Desktops & Laptops
+@include mediaLg{
+  .projects{
+    grid-template-columns: repeat(3,1fr);
+  }
+};
+
+
+// Tablets & Small Laptops
+@include mediaMd{
+  section{
+    align-items: center;
+    text-align: center;
+
+    .lg-heading{
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+
+  ul.menu-nav,
+  div.menu-brand{
+    float: none;
+    width: 100%;
+    min-height: 0;
+
+    &.show{
+      transform: translate3d(0,0,0);
+    }
+  }
+
+  .menu-nav{
+    height: 75vh;
+    transform: translate3d(-100%,0,0);
+    font-size: 24px;
+  }
+
+  .menu-brand{
+    height: 24vh;
+    transform: translate3d(100%,0,0);
+
+    .myimage{
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  .about-info{
+    grid-template-areas: 'bioimage''bio''job1''job2''job3';
+    grid-template-columns:1fr;
+  }
+
+  .projects{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .boxes{
+    margin-top: .8rem;
+
+    div{
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      padding: 10px 25px;;
+      @include easeOut;
+
+      &:hover{
+        padding: 5px 15px;
+        background: $warning;
+        color: set-text-color($warning);
+        span{
+          color: set-text-color($warning);
+        }
+      }
+    }
+  }
+
+
+};
+
+
+// Smartphones
+@include mediaSm{
+  section#home h1{
+    margin-top: 10vh;
+  }
+
+  .projects{
+    grid-template-columns:1fr;
+  }
+};
